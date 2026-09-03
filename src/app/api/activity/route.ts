@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { requireAuth, verifyWorkspaceMember } from '@/lib/workspace-auth'
 
+export const dynamic = 'force-dynamic'
+
 // GET /api/activity — list chronological workspace/project activity
 export async function GET(req: Request) {
   const { error } = await requireAuth()
